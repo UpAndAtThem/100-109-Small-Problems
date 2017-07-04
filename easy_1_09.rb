@@ -14,3 +14,9 @@ def sum pos_int
 end
 
 p sum 101_010_101_010
+
+
+# #ALTERNATIVE APPROACH
+# def sum(number)
+#   number.to_s.chars.map(&:to_i).reduce(:+)
+# end
