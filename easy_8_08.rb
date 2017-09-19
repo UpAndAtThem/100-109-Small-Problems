@@ -4,11 +4,7 @@
 def double_consonants(string)
   result_string = ''
   string.each_char do |letter|
-    if (letter =~ /[b-df-hj-np-tv-z]/i) == 0
-      result_string << letter << letter
-    else
-      result_string << letter
-    end
+    (letter =~ /[b-df-hj-np-tv-z]/i) == 0 ? result_string << letter << letter : result_string << letter
   end
   result_string
 end
