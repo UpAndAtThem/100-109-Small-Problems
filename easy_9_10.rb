@@ -3,11 +3,14 @@
 
 def buy_fruit(fruit_arr)
   fruit_arr.each_with_object([]) do |fruit_and_num, basket|
-    fruit_and_num[1].times { |_| basket << fruit_and_num[0]}
+    fruit = fruit_and_num[0]
+    num_of_fruit = fruit_and_num[1]
+
+    num_of_fruit.times { |_| basket << fruit}
   end
 end
 
-buy_fruit([["apples", 3], ["orange", 1], ["bananas", 2]])
+p buy_fruit([["apples", 3], ["orange", 1], ["bananas", 2]])
 
 # ALTERNATIVE APPROACH
 # def buy_fruit(list)
