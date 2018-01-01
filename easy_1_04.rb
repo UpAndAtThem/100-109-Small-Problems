@@ -7,24 +7,15 @@
 # SUV => 1
 # motorcycle => 2
 
-def count_occurrences whole_list
-  
-  return_hash = {} # this will be the returned value of key "vehicle type" and the value "count"
-  unique_items = whole_list.uniq # list of unique elements from whole_list
-  
-  unique_items.each{|unique_item| return_hash[unique_item] = 0}#assigns the uniqe array to a hash with 0 being the value (count) and each element in unique_items being the key
-    
-  whole_list.each{|item| return_hash[item] += 1} # adds 1 to each insance from whole_list arr
-  
-  return_hash
-
+def count_occurrences(vehicles)
+  vehicles.each_with_object(Hash.new(0)) do |vehicle, memo|
+    memo[vehicle] += 1
+  end
 end
 
 vehicles = ['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'motorcycle', 'car', 'truck']
 
-list = count_occurrences(vehicles)
-
-p list
+p count_occurrences(vehicles)
 
 
 # ALTERNATE APPROACH
