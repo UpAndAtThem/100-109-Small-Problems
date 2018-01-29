@@ -1,18 +1,19 @@
-def rotate90(matrix)
+def rotate(matrix, degree)
   return_matrix = []
-  new_matrix = []
+  matrix_row = []
 
   matrix[0].length.times do |i|
-    new_matrix = []
+    matrix_row = []
 
     matrix.length.times do |j|
-      new_matrix << matrix[j][i]
+      matrix_row << matrix[j][i]
     end
 
-    return_matrix << new_matrix.reverse
+    return_matrix << matrix_row.reverse
   end
 
-  return_matrix
+  degree -= 90 
+  degree.zero? ? return_matrix : rotate(return_matrix, degree)
 end
 
 matrix1 = [
@@ -26,10 +27,9 @@ matrix2 = [
   [5, 1, 0, 8]
 ]
 
-new_matrix1 = rotate90(matrix1)
-new_matrix2 = rotate90(matrix2)
-new_matrix3 = rotate90(rotate90(rotate90(rotate90(matrix2))))
+p new_matrix1 = rotate(matrix1, 180)
+new_matrix2 = rotate(matrix2, 180)
 
-new_matrix1 == [[3, 4, 1], [9, 7, 5], [6, 2, 8]]
-new_matrix2 == [[5, 3], [1, 7], [0, 4], [8, 2]]
-new_matrix3 == matrix2
+new_matrix1 == [[6, 9, 3], [2, 7, 4], [8, 5, 1]]
+new_matrix2 == [[8, 0, 1, 5], [2, 4, 7, 3]]
+
