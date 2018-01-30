@@ -1,4 +1,4 @@
-ADJECTIVES = %w(lazy perky white agressive cantankerous)
+ADJECTIVES = %w(lazy perky stunning nice agressive cantankerous)
 NOUNS = %w(bridge tunnel bird democracy money glass book)
 VERBS = %w(dashed jumped crawled flossed skiped alerted)
 ADVERBS = %w(easily lazily quickly mercilessly combatively)
@@ -11,7 +11,3 @@ madlibs_card = File.open("./madlibs_card.txt", "r") do |file|
                                      verb: VERBS.sample)
                  end
                end
-
-word = "hello"
-
-# p format("%(word) world", word)
