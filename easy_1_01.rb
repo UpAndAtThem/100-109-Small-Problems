@@ -1,8 +1,22 @@
-#Write a method that takes two arguments, a string and a positive integer, and prints the string as many times as the integer indicates.
+# ------Pseudo Code--------- 
 
-def print_num_times str, pos_int
-  return if pos_int < 0
-  pos_int.times {puts str}
+# given two variables as arguments a string and a positive integer
+
+# loop the amount of times as the given positive integer
+  # print string to the screen
+
+# ------Formal Pseudo Code--------
+
+# Given two variables as arguments a string and a pos. integer
+
+# SET count = 0
+
+# WHILE count <= 3
+#   PRINT string
+# END
+
+def repeat(string, int)
+  1.upto(int) { |_| puts string}
 end
 
-print_num_times "hello", 4
+repeat "hello world", 3
