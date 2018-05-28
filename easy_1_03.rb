@@ -1,18 +1,25 @@
-#Write a method that takes one argument, a positive integer, and returns a list of the digits in the number.
+# Write a method that takes one argument, a positive integer, and returns a list of the digits in the number.
 
-def list_digits pos_int
-  return "you need a positive number" if pos_int < 0
-  list_of_digits = pos_int.to_s.split("")
-  list_of_digits = list_of_digits.map {|digit| digit.to_i}
+# ----pseudo code----
+
+# given a positive integer named "int"
+
+# transform int into a string
+# split the string at each character into a collection
+# transform the collection into integer objects and return collection
+
+# ----formal pseudo code----
+
+# START
+
+# Given a positive integer named "int"
+
+# int = int.to_s
+# SET int_arr = int.chars
+# PRINT int_arr = int_arr.map { |int_char| int_char.to_i}
+
+# END
+
+def digit_list(int)
+  int.to_s.chars.map(&:to_i)
 end
-
-p list_digits 33333
-
-
-# Alternative Aproach
-
-# def digit_list(number)
-#   number.to_s.chars.map(&:to_i)
-# end
-
-# p digit_list 444444
