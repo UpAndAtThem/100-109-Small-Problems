@@ -14,9 +14,15 @@
 
 # Given a positive integer named "int"
 
-# int = int.to_s
-# SET int_arr = int.chars
-# PRINT int_arr = int_arr.map { |int_char| int_char.to_i}
+# SET string_int = transform int to string representation
+# SET string_int_arr = transform string_int into a collection delimiting at every char
+
+# SET count = 1, result_arr = []
+
+# WHILE count is less than or equal to the number of elements in string_int_arr
+#   result_arr += transform elem at position count to an integer and add it to result_arr
+
+# PRINT result_arr
 
 # END
 
