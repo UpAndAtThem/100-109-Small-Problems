@@ -1,39 +1,21 @@
-# Write a method that will take a short line of text, and print it within a box.
-
-# Example:
-def print_in_box(string)
-  p "+-" + (string.chars.map{ |x| "-"}).join + "-+"
-  p '|'.ljust(0) + '|'.rjust(string.size + 3)
-  p '|'+ string.center(string.size + 2) + "|"
-  p '|'.ljust(0) + '|'.rjust(string.size + 3)
-  p "+-" + (string.chars.map{ |x| "-"}).join + "-+"
+def print_in_box(str)
+  puts horizontal_edge(str)
+  puts above_or_below_phrase(str)
+  puts phrase(str)
+  puts above_or_below_phrase(str)
+  puts horizontal_edge(str)
 end
 
-print_in_box('To boldly go where no one has gone before.')
+def horizontal_edge(str)
+  "+#{'-' * (str.length + 2)}+"
+end
 
+def above_or_below_phrase(str)
+  "|#{' ' * (str.length + 2)}|"
+end
 
-# >> OUTPUT
-# +--------------------------------------------+
-# |                                            |
-# | To boldly go where no one has gone before. |
-# |                                            |
-# +--------------------------------------------+
+def phrase(str)
+  "| #{str} |"
+end
 
-
-# ALTERNATIVE APPROACH
-# def print_in_box(message)
-#    horizontal_rule = "+#{'-' * (message.size + 2)}+"
-#    empty_line = "|#{' ' * (message.size + 2)}|"
-
-#    puts horizontal_rule
-#    puts empty_line
-#    puts "| #{message} |"
-#    puts empty_line
-#    puts horizontal_rule
-# end
-
-
-
-
-
-
+print_in_box('hello world')
