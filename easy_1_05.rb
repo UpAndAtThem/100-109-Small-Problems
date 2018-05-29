@@ -1,31 +1,32 @@
-# Write a method that takes one argument, a string, and returns the same string with the words in reverse order.
+# ----pseudo code----
 
+# given a string called string
 
-# all the above tests should be true
+# -split string into a collection of words delimited by the space char into a variable named strings
+# -reverse the elements in strings
+# -concatenate all the elements together with a space after (the last element doen't get the concatenated space) into a string
 
-def reverse_sentence string 
-  i = -1
-  arr = []
-  string_arr = string.split " "
-  
-  string_arr.each do |word|  # don't reinvent the wheel, this is basically the .reverse Arr Method
-    arr << string_arr[i]
-    i -= 1  
-  end
-  
-  arr.join " "  
+# ----formal pseudo code----
+
+# START
+
+# given a string called str
+
+# SET strings = split str into a collection of strings delimited by the space character
+# strings = reverse the collection
+# SET reversed_string = '', iteration = 1
+
+# WHILE iteration <=  num of elements in strings
+#   IF iteration <= space of last element in strings
+#     reversed_string += strings elem at position iteration with a concatenated space char
+#   ELSE
+#     reversed_string += strings elem at position iteration
+#   iteration += 1
+
+# PRINT strings
+
+# END
+
+def reverse_sentence str 
+ str.split.reverse.join' '
 end
-
-x = reverse_sentence "Hello my name is egor"
-
-puts reverse_sentence('') == ''
-puts reverse_sentence('Hello World') == 'World Hello'
-puts reverse_sentence('Reverse these words') == 'words these Reverse'
-
-
-
-# ALTERNATIVE METHOD
-
-# def reverse_sentence(string)
-#   string.split.reverse.join(' ')
-# end
